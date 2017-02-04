@@ -18,3 +18,10 @@ spring.jpa.hibernate.ddl-auto: none
 
 # Logging
 logging.level.org.springframework: INFO
+
+---
+spring:
+  profiles: docker
+eureka:
+  instance:
+    preferIpAddress: true
