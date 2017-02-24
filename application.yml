@@ -9,15 +9,15 @@ spring:
   datasource:
     schema: classpath*:db/${petclinic.database}/schema.sql
     data: classpath*:db/${petclinic.database}/data.sql
-  sleuth:
-    sampler:
-      percentage: 1.0
 
 # JPA
 spring.jpa.hibernate.ddl-auto: none
 
 # Logging
 logging.level.org.springframework: INFO
+
+# Sleuth
+spring.sleuth.sampler.percentage: "1.0"
 
 ---
 spring:
