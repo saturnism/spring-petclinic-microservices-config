@@ -9,12 +9,9 @@ spring:
   datasource:
     schema: classpath*:db/${petclinic.database}/schema.sql
     data: classpath*:db/${petclinic.database}/data.sql
-
-spring.datasource.url=jdbc:mysql://petclinic-mysql/app
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.datasource.driverClassName=com.mysql.jdbc.Driver
-
+    url: jdbc:mysql://petclinic-mysql/app
+    username: root
+    password: yourpassword
 
 # JPA
 spring.jpa.hibernate.ddl-auto: none
