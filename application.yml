@@ -10,8 +10,8 @@ spring:
     schema: classpath*:db/${petclinic.database}/schema.sql
     data: classpath*:db/${petclinic.database}/data.sql
     url: jdbc:mysql://petclinic-mysql/petclinic
-    username: petclinic
-    password: yourpassword
+    username: root
+    password: mypassword
 
 # JPA
 spring.jpa.hibernate.ddl-auto: none
