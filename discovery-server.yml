@@ -17,6 +17,8 @@ spring:
   profiles: docker
   application:
     name: discovery-server
+server:
+  port: 8761
 eureka:
   client:
     registerWithEureka: true
