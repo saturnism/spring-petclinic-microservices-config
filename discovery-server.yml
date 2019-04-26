@@ -15,6 +15,8 @@ eureka:
 ---
 spring:
   profiles: docker
+  application:
+    name: discovery-server
 server:
   port: 8761
 eureka:
@@ -31,7 +33,7 @@ eureka:
     hostname: discovery-server-0.discovery-instance
   client:
     serviceUrl:
-      defaultZone: http://discovery-server-1.discovery-instance:8761/eureka
+      defaultZone: http://discovery-server-1.discovery-instance:8761/eureka/
 
 
 ---
@@ -42,4 +44,4 @@ eureka:
     hostname: discovery-server-1.discovery-instance
   client:
     serviceUrl:
-      defaultZone: http://discovery-server-0.discovery-instance:8761/eureka
+      defaultZone: http://discovery-server-0.discovery-instance:8761/eureka/
