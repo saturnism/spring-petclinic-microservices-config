@@ -11,3 +11,33 @@ eureka:
     enableSelfPreservation: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+---
+spring:
+  profiles: docker
+  application:
+    name: discovery-server
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    enableSelfPreservation: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+---
+spring:
+  profiles: discovery-server-0
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server-1:${server.port}/eureka
+
+
+---
+spring:
+  profiles: discovery-server-1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server-0:${server.port}/eureka
