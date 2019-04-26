@@ -28,7 +28,7 @@ spring:
   profiles: discovery-server-0
 eureka:
   instance:
-    hostname: discovery-server-0.discovery-instance
+    hostname: discovery-server-0
   client:
     serviceUrl:
       defaultZone: http://discovery-server-1.discovery-instance:${server.port}/eureka
@@ -38,6 +38,8 @@ eureka:
 spring:
   profiles: discovery-server-1
 eureka:
+  instance:
+    hostname: discovery-server-1
   client:
     serviceUrl:
-      defaultZone: http://discovery-server-1.discovery-instance:${server.port}/eureka
+      defaultZone: http://discovery-server-0.discovery-instance:${server.port}/eureka
