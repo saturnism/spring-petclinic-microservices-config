@@ -22,16 +22,16 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     enableSelfPreservation: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 ---
 spring:
   profiles: discovery-server-0
 eureka:
+  instance:
+    hostname: discovery-server-0.discovery-instance
   client:
     serviceUrl:
-      defaultZone: http://discovery-server-1:${server.port}/eureka
+      defaultZone: http://discovery-server-1.discovery-instance:${server.port}/eureka
 
 
 ---
@@ -40,4 +40,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery-server-0:${server.port}/eureka
+      defaultZone: http://discovery-server-1.discovery-instance:${server.port}/eureka
